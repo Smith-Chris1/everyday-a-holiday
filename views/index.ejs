@@ -16,16 +16,12 @@
             <div class="col-md-8 mx-auto">
                 <div class="card h-100 mb-3">
                     <div class="card-header form-group d-flex align-items-center">
-                        <select class="form-control w-25 mx-auto text-center" id="dates">
-                            <%for (var i = 0; i < pulldown.length; i++){%>
-                            <h3>
-                                <option value='<%=pulldown[i].id%>'>
-                                    <%=pulldown[i].month%>-<%=pulldown[i].day%>
-                                </option>
-                            </h3>
-                            <%}%>
-                        </select>
+                        <div class="w-25 mx-auto text-center input-append date" data-date="01-01">
+                            <input id="dp3" size="16" type="text" value="01-01" />
+                            <span class="add-on"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
                     </div>
+
                     <div class="card-body">
                         <h5 class="card-title">The holiday on this day is: </h5>
                         <h6 id="holidayTitle" class="card-subtitle text-muted"></h6>
@@ -46,20 +42,39 @@
 
 </body>
 <script>
+    $(document).ready(function(){
     var pulldown = <%-JSON.stringify(pulldown)%>
-
 
     holidayTitle = document.getElementById('holidayTitle')
     holidayImage = document.getElementById('holidayImage')
     holidayDescription = document.getElementById('holidayDescription')
 
-    $("#dates").on("click change", function(e) {
-        id = $("#dates").val()
-        holidayTitle.innerHTML = pulldown[id].name;
-        holidayDescription.innerHTML = pulldown[id].description
-        holidayImage.src = pulldown[id].image_url
-    // $("#output").html("Event type: " + e.target.nodeName);
-});
+
+    $('#dp3').datepicker({
+        format: "mm-dd",
+        startDate: "01-01",
+        endDate: "01-31",
+        autoclose: true
+    });
+    
+    $('#dp3').datepicker().on('changeDate', function (e) {
+        id = $("#dp3").val()
+        // console.log(id)
+        for (var i = 0; i < pulldown.length; i++) {
+            // console.log(pulldown[i].month + "-" + pulldown[i].day)
+            if (id == pulldown[i].month + "-" + pulldown[i].day) {
+                holidayTitle.innerHTML = pulldown[i].name;
+                holidayDescription.innerHTML = pulldown[i].description
+                holidayImage.src = pulldown[i].image_url
+                $('.datepicker').hide();
+            }
+        }
+
+    })
+
+    //     // $("#output").html("Event type: " + e.target.nodeName);
+    // });
+    })
 </script>
 
 </html>
