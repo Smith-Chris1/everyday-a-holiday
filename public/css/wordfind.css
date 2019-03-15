@@ -4,13 +4,10 @@
             float: left;
             margin: 30px 20px;
         }
-
         #puzzle-container div {
             width: 100%;
             margin: 0 auto;
         }
-
-
         #puzzle-container .puzzleSquare {
             height: 30px;
             width: 30px;
@@ -19,33 +16,23 @@
             border: 0;
             font: 1em sans-serif;
         }
-
         #puzzle-container button::-moz-focus-inner {
             border: 0;
         }
-
-
         #puzzle-container .selected {
             background-color: orange;
         }
-
-
         #puzzle-container .found {
             background-color: blue;
             color: white;
         }
-
         #puzzle-container .solved {
             background-color: purple;
             color: white;
         }
-
-
         #puzzle-container .complete {
             background-color: green;
         }
-
-
         #puzzle-words {
             padding-top: 20px;
             -moz-column-count: 2;
@@ -56,23 +43,17 @@
             column-gap: 20px;
             width: 300px;
         }
-
         #puzzle-words ul {
             list-style-type: none;
         }
-
         #puzzle-words li {
             padding: 3px 0;
             font: 1em sans-serif;
         }
-
-
         #puzzle-words .wordFound {
             text-decoration: line-through;
             color: gray;
         }
-        
-
         #solve {
             margin: 0 30px;
         }
