@@ -49,6 +49,16 @@
     holidayImage = document.getElementById('holidayImage')
     holidayDescription = document.getElementById('holidayDescription')
 
+    if (localStorage.getItem('month') === null) {
+      localStorage.setItem('month', '01');
+    }
+    if (localStorage.getItem('day') === null) {
+      localStorage.setItem('day', '01');
+    }
+
+    $('#dp3').val() = localStorage.getItem('month') + "-" + localStorage.getItem('day');
+    pulldata();
+
 
     $('#dp3').datepicker({
         format: "mm-dd",
@@ -56,25 +66,28 @@
         endDate: "01-31",
         autoclose: true
     });
-    
-    $('#dp3').datepicker().on('changeDate', function (e) {
-        id = $("#dp3").val()
-        // console.log(id)
-        for (var i = 0; i < pulldown.length; i++) {
-            // console.log(pulldown[i].month + "-" + pulldown[i].day)
-            if (id == pulldown[i].month + "-" + pulldown[i].day) {
-                holidayTitle.innerHTML = pulldown[i].name;
-                holidayDescription.innerHTML = pulldown[i].description
-                holidayImage.src = pulldown[i].image_url
-                $('.datepicker').hide();
-            }
-        }
 
-    })
+    $('#dp3').datepicker().on('changeDate', pulldata());
 
     //     // $("#output").html("Event type: " + e.target.nodeName);
     // });
     })
+
+    function pulldata() {
+      id = $("#dp3").val()
+      // console.log(id)
+      for (var i = 0; i < pulldown.length; i++) {
+          // console.log(pulldown[i].month + "-" + pulldown[i].day)
+          if (id == pulldown[i].month + "-" + pulldown[i].day) {
+              holidayTitle.innerHTML = pulldown[i].name;
+              holidayDescription.innerHTML = pulldown[i].description
+              holidayImage.src = pulldown[i].image_url
+              localStorage.setItem('month', pulldown[i].month);
+              localStorage.setItem('day', pulldown[i].day);
+              $('.datepicker').hide();
+          }
+      }
+    }
 </script>
 
 </html>
