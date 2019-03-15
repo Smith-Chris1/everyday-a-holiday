@@ -67,8 +67,8 @@
         autoclose: true
     });
 
-    $('#dp3').datepicker().on('changeDate', pulldata());
-    
+    $('#dp3').datepicker().on('changeDate', function(e) {pulldata()});
+
     function pulldata() {
       id = $("#dp3").val()
       // console.log(id)
