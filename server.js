@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'));
 
 // set the home page route
 app.get('/', function (req, res) {
-  
+
   dbConnect.query('SELECT * FROM public.holidays;', (err, results) => {
     // var pulldown = []
     if (err) throw err;
@@ -28,6 +28,13 @@ app.get('/', function (req, res) {
       pulldown: results.rows
     });
     // }
+  });
+  dbConnect.query('SELECT id, game_words FROM public.holidays;', (err, results) => {
+    if (err) throw err;
+    app.set('gametime', results.rows);
+    res.render('game', {
+      gametime: results.rows
+    });
   });
 });
 
