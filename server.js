@@ -29,13 +29,7 @@ app.get('/', function (req, res) {
     });
     // }
   });
-  dbConnect.query('SELECT id, game_words FROM public.holidays;', (err, results) => {
-    if (err) throw err;
-    app.set('gametime', results.rows);
-    res.render('game', {
-      gametime: results.rows
-    });
-  });
+
 });
 
 app.get('/photo', function (req, res) {
@@ -44,8 +38,13 @@ app.get('/photo', function (req, res) {
 });
 
 app.get('/game', function (req, res) {
-  // ejs render automatically looks in the views folder
-  res.render('game');
+  dbConnect.query('SELECT id, game_words FROM public.holidays;', (err, results) => {
+    if (err) throw err;
+    app.set('gametime', results.rows);
+    res.render('game', {
+      gametime: results.rows
+    });
+  });
 });
 
 app.listen(port, function () {
