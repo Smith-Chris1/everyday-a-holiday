@@ -27,7 +27,7 @@
         <script>
         var pulldown = <%-JSON.stringify(pulldown)%>
             // An array with the words to show
-            var words = pulldown.find(x => x.id === 1).game_words;
+            var words = ['cows', 'money'];
 
             // Start a basic word game without customization !
             var gamePuzzle = wordfindgame.create(words, '#puzzle-container', '#puzzle-words');
