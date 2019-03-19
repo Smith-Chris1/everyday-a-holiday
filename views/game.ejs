@@ -27,7 +27,7 @@
         <script>
         var gamewords = <%-JSON.stringify(gametime)%>
             // An array with the words to show
-            var words = gamewords.find(x => x.id === '1').game_words;
+            var words = gamewords.find(x => x.id === 1).game_words;
 
             // Start a basic word game without customization !
             var gamePuzzle = wordfindgame.create(words, '#puzzle-container', '#puzzle-words');
