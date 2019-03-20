@@ -77,8 +77,7 @@
               holidayTitle.innerHTML = pulldown[i].name;
               holidayDescription.innerHTML = pulldown[i].description
               holidayImage.src = pulldown[i].image_url
-              localStorage.setItem('month', pulldown[i].month);
-              localStorage.setItem('day', pulldown[i].day);
+              localStorage.setItem('currentDay', pulldown[i].id)
               $('.datepicker').hide();
           }
       }
