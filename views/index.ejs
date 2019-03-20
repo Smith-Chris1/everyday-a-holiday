@@ -49,14 +49,13 @@
     holidayImage = document.getElementById('holidayImage')
     holidayDescription = document.getElementById('holidayDescription')
 
-    if (localStorage.getItem('month') === null) {
-      localStorage.setItem('month', '01');
-    }
-    if (localStorage.getItem('day') === null) {
-      localStorage.setItem('day', '01');
+    if (localStorage.getItem('currentday') === null) {
+      localStorage.setItem('currentday', 1);
     }
 
-    $('#dp3').val(localStorage.getItem('month') + "-" + localStorage.getItem('day'));
+    theday = localStorage.getItem('currentday');
+
+    $('#dp3').val(pulldown[theday].month + "-" + pulldown[theday].day));
     pulldata();
 
 

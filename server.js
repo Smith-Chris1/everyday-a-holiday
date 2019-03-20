@@ -38,7 +38,7 @@ app.get('/photo', function (req, res) {
 });
 
 app.get('/game', function (req, res) {
-  dbConnect.query('SELECT day, month, name, game_words FROM public.holidays;', (err, results) => {
+  dbConnect.query('SELECT id, name, game_words FROM public.holidays;', (err, results) => {
     if (err) throw err;
     app.set('gametime', results.rows);
     res.render('game', {
