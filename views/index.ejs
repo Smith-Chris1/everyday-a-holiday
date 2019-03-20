@@ -53,7 +53,7 @@
       localStorage.setItem('currentday', 1);
     }
 
-    theday = localStorage.getItem('currentday');
+    theday = parseInt(localStorage.getItem('currentday'));
 
     month = pulldown.find(x => x.id === theday).month
     day = pulldown.find(x => x.id === theday).day
