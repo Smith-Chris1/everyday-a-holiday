@@ -29,10 +29,11 @@
         var gamewords = <%-JSON.stringify(gametime)%>
             // An array with the words to show
 
-            var day = parseInt(localStorage.getItem('day'));
-            var happyday = gamewords.find(x => x.id === day).name;
+            var day = localStorage.getItem('day');
+            var month = localStorage.getItem('month');
+            var happyday = gamewords.find(x => x.day === day && x => x.month === month).name;
             document.getElementById('happy-day').innerHTML = happyday + " Word Find";
-            var words = gamewords.find(x => x.id === day).game_words;
+            var words = gamewords.find(x => x.day === day && x => x.month === month).game_words;
 
             // Start a basic word game without customization !
             var gamePuzzle = wordfindgame.create(words, '#puzzle-container', '#puzzle-words');
