@@ -29,7 +29,7 @@
         var gamewords = <%-JSON.stringify(gametime)%>
             // An array with the words to show
 
-            var day = localStorage.getItem('day');
+            var day = parseInt(localStorage.getItem('day'));
             var happyday = gamewords.find(x => x.id === day).name;
             document.getElementById('happy-day').innerHTML = happyday + " Word Find";
             var words = gamewords.find(x => x.id === day).game_words;
