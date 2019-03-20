@@ -55,7 +55,10 @@
 
     theday = localStorage.getItem('currentday');
 
-    $('#dp3').val(pulldown[theday].month + "-" + pulldown[theday].day);
+    month = pulldown.find(x => x.id === theday).month
+    day = pulldown.find(x => x.id === theday).day
+
+    $('#dp3').val(month + "-" + day);
     pulldata();
 
 
@@ -77,7 +80,7 @@
               holidayTitle.innerHTML = pulldown[i].name;
               holidayDescription.innerHTML = pulldown[i].description
               holidayImage.src = pulldown[i].image_url
-              localStorage.setItem('currentDay', pulldown[i].id)
+              localStorage.setItem('currentday', pulldown[i].id)
               $('.datepicker').hide();
           }
       }
