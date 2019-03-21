@@ -6,6 +6,7 @@
 
 body {
   padding-top: 54px;
+  background: linear-gradient(to bottom right, #99ffcc 0%, #ffffff 83%);
 }
 
 @media (min-width: 992px) {
@@ -19,7 +20,7 @@ body {
 html {
   position: relative;
   min-height: 100%;
-    background: linear-gradient(to bottom right, #99ffcc 0%, #ffffff 83%);
+    
 }
 body {
   /* Margin bottom by footer height */
