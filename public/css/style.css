@@ -61,16 +61,15 @@ code {
     background: rgba(255,255,255,0.5);
 }
 
-.input[type="text"], .add-on {
-    height: 30px !important;
-}
-
-.input {
-    width: 132 px;
-}
-
 .card-subtitle {
     font-size: 2em;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.brand-logo {
+    margin: auto;
+    font-size: 1.5rem;
 }
 
 .card-header {
@@ -78,6 +77,10 @@ code {
 }
 
 .bg-dark {
+    background: rgba(89, 89, 89,.6)!important;
+}
+
+.footer {
     background: rgba(89, 89, 89,.6)!important;
 }
 
