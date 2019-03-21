@@ -66,8 +66,8 @@ code {
 }
 
 .brand-logo {
-    margin: auto;
-    font-size: 1.5rem;
+    color: #ccffe6;
+    font-size: 1.75rem;
 }
 
 .card-header {
@@ -76,6 +76,14 @@ code {
 
 .bg-dark {
     background: rgba(89, 89, 89,.6)!important;
+}
+
+.input {
+    height: 25px!important;
+}
+
+.add-on {
+    height: 25px!important;
 }
 
 .datepicker:before {
