@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
 /*!
  * Start Bootstrap - Portfolio Item (https://startbootstrap.com/template-overviews/portfolio-item)
  * Copyright 2013-2017 Start Bootstrap
@@ -7,6 +9,7 @@
 body {
   padding-top: 54px;
   background: linear-gradient(to bottom right, #99ffcc 0%, #ffffff 83%);
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 @media (min-width: 992px) {
@@ -52,6 +55,26 @@ body > .container {
 
 code {
   font-size: 80%;
+}
+
+.card {
+    background: rgba(255,255,255,0.5);
+}
+
+.input, .add-on {
+    height: auto;
+}
+
+.card-subtitle {
+    font-size: 2em;
+}
+
+.card-header {
+    background: rgba(89, 89, 89,.2);
+}
+
+.bg-dark {
+    background: rgba(89, 89, 89,.6)!important;
 }
 
 .datepicker:before {
