@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
 
 /*!
  * Start Bootstrap - Portfolio Item (https://startbootstrap.com/template-overviews/portfolio-item)
@@ -68,6 +68,7 @@ code {
 .brand-logo {
     color: #ccffe6!important;
     font-size: 1.75rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .card-header {
