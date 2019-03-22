@@ -79,6 +79,7 @@
           // console.log(pulldown[i].month + "-" + pulldown[i].day)
           if (id == pulldown[i].month + "-" + pulldown[i].day) {
               var monthName;
+              var dayFormatted;
               
               switch(pulldown[i].month) {
                 case '01':
@@ -130,7 +131,14 @@
                    break;   
               }
               
-              dayTitle.innerHTML = "The holiday on " + monthName + " " + pulldown[i].day + " is:";
+              if (pulldown[i].day[1] == '1') {
+                  dayFormatted = pulldown[i].day + "st";
+              }
+              else {
+                  dayFormatted = pulldown[i].day;
+              }
+              
+              dayTitle.innerHTML = "The holiday on " + monthName + " " + dayFormatted + " is:";
               holidayTitle.innerHTML = pulldown[i].name;
               holidayDescription.innerHTML = pulldown[i].description
               holidayImage.src = pulldown[i].image_url
