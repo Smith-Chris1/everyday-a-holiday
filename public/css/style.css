@@ -88,6 +88,10 @@ input {
     height: 25px!important;
 }
 
+footer p {
+    margin: auto!important;
+}
+
 .datepicker:before {
   content: '';
   display: inline-block;
