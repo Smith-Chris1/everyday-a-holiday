@@ -131,12 +131,26 @@
                    break;   
               }
               
-              if (pulldown[i].day[1] == '1') {
+              switch(pulldown[i].day[1]) {
+                case '1':
                   dayFormatted = pulldown[i].day + "st";
+                  break;
+                case '2':
+                  dayFormatted = pulldown[i].day + "nd";
+                  break;
+                case '3':
+                  dayFormatted = pulldown[i].day + "rd";
+                  break;
+                default:
+                  dayFormatted = pulldown[i].day + "th";
+                  break;
+              
               }
-              else {
-                  dayFormatted = pulldown[i].day;
+              
+              if (dayFormatted[0] == '0') {
+                  dayFormatted = dayFormatted.substring(1);
               }
+              
               
               dayTitle.innerHTML = "The holiday on " + monthName + " " + dayFormatted + " is:";
               holidayTitle.innerHTML = pulldown[i].name;
