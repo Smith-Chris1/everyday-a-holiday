@@ -23,17 +23,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <div class="row">
-            <a class="navbar-brand" href="/">Logo</a>
-        <!-- </div> -->
-        <!-- <div class="container"> -->
-                <a class="navbar-brand" href="photo">Photo Gallery</a>
-            <!-- </div> -->
-            <!-- <div class="container"> -->
-                    <a class="navbar-brand" href="game">Game</a>
-                <!-- </div> -->
-            </div>
+        <% include /partials/nav %>
     </nav>
 
   <main class="container" role="main">
@@ -113,22 +103,14 @@
                                 </div>
                               </div>
             </div>
-    </div>
-  </main>
+      
+    </main>
+
+
 
   <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="mr-3"><a href="#">Copyright</a></div>
-        <div class="mr-3"><a href="#">Home</a></div>
-        <div class="mr-3"><a href="#">Contact</a></div>
-        <div class="mr-3"><a href="#">Style Guide</a></div>
-        <div class="mr-3"><a href="#">Site Map</a></div>
-        <div class="mr-3"><a href="#">Practice</a></div>
-      </div>
-    </div>
-    </div>
-  </footer>
+        <% include /partials/footer %>
+    </footer>
 
 </body>
 
