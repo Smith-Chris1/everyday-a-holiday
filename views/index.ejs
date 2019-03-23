@@ -131,21 +131,30 @@
                    break;   
               }
               
-              switch(pulldown[i].day[1]) {
-                case '1':
-                  dayFormatted = pulldown[i].day + "st";
-                  break;
-                case '2':
-                  dayFormatted = pulldown[i].day + "nd";
-                  break;
-                case '3':
-                  dayFormatted = pulldown[i].day + "rd";
-                  break;
-                default:
-                  dayFormatted = pulldown[i].day + "th";
-                  break;
-              
+              if (pulldown[i].day == "11" || 
+                  pulldown[i].day == "12" ||
+                  pulldown[i].day == "13") {
+                  dayFormatted = pulldown[i].day + "th";    
+              } else {
+                  switch(pulldown[i].day[1]) {
+                    case '1':
+                      dayFormatted = pulldown[i].day + "st";
+                      break;
+                    case '2':
+                      dayFormatted = pulldown[i].day + "nd";
+                      break;
+                    case '3':
+                      dayFormatted = pulldown[i].day + "rd";
+                      break;
+                    default:
+                      dayFormatted = pulldown[i].day + "th";
+                      break;
+                    }
               }
+                      
+             
+              
+              
               
               if (dayFormatted[0] == '0') {
                   dayFormatted = dayFormatted.substring(1);
