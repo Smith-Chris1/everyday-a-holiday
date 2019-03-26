@@ -65,7 +65,7 @@
                 autoclose: true
             });
 
-            $('#dp3').datepicker().on('changeDate', function(e) {getgame(); reload();});
+            $('#dp3').datepicker().on('changeDate', function(e) {getgame(); location.reload();});
 
             function getgame() {
               id = $("#dp3").val()
