@@ -51,9 +51,9 @@
 
             theday = parseInt(localStorage.getItem('currentday'));
 
-            month = pulldown.find(x => x.id === theday).month
-            day = pulldown.find(x => x.id === theday).day
-            
+            month = gamewords.find(x => x.id === theday).month
+            day = gamewords.find(x => x.id === theday).day
+
             $('#dp3').val(month + "-" + day);
             pulldata();
 
@@ -70,13 +70,13 @@
             function pulldata() {
               id = $("#dp3").val()
               // console.log(id)
-              for (var i = 0; i < pulldown.length; i++) {
-                  // console.log(pulldown[i].month + "-" + pulldown[i].day)
-                  if (id == pulldown[i].month + "-" + pulldown[i].day) {
-                      holidayTitle.innerHTML = pulldown[i].name;
-                      holidayDescription.innerHTML = pulldown[i].description
-                      holidayImage.src = pulldown[i].image_url
-                      localStorage.setItem('currentday', pulldown[i].id)
+              for (var i = 0; i < gamewords.length; i++) {
+                  // console.log(gamewords[i].month + "-" + gamewords[i].day)
+                  if (id == gamewords[i].month + "-" + gamewords[i].day) {
+                      holidayTitle.innerHTML = gamewords[i].name;
+                      holidayDescription.innerHTML = gamewords[i].description
+                      holidayImage.src = gamewords[i].image_url
+                      localStorage.setItem('currentday', gamewords[i].id)
                       $('.datepicker').hide();
                   }
               }
