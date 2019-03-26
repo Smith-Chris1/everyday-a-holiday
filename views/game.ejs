@@ -73,9 +73,6 @@
               for (var i = 0; i < gamewords.length; i++) {
                   // console.log(gamewords[i].month + "-" + gamewords[i].day)
                   if (id == gamewords[i].month + "-" + gamewords[i].day) {
-                      holidayTitle.innerHTML = gamewords[i].name;
-                      holidayDescription.innerHTML = gamewords[i].description
-                      holidayImage.src = gamewords[i].image_url
                       localStorage.setItem('currentday', gamewords[i].id)
                       $('.datepicker').hide();
                   }
