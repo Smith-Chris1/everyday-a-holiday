@@ -16,6 +16,12 @@
   <main class="container" role="main">
     <body>
       <h1 id="happy-day"></h1>
+      <div class="card-header form-group d-flex align-items-center">
+          <div class="w-25 mx-auto text-center input-append date" data-date="01-01">
+              <input id="dp3" size="16" type="text" value="01-01" />
+              <span class="add-on"><i class="fas fa-calendar-alt"></i></span>
+          </div>
+      </div>
         <!-- Add required markup -->
         <div id="puzzle-container"></div>
         <div id="puzzle-words"></div>
@@ -42,12 +48,40 @@
                 var result = wordfindgame.solve(gamePuzzle, words);
                 console.log(result);
             });
+            $('#dp3').val(month + "-" + day);
+            pulldata();
+
+
+            $('#dp3').datepicker({
+                format: "mm-dd",
+                startDate: "01-01",
+                endDate: "01-31",
+                autoclose: true
+            });
+
+            $('#dp3').datepicker().on('changeDate', function(e) {pulldata()});
+
+            function pulldata() {
+              id = $("#dp3").val()
+              // console.log(id)
+              for (var i = 0; i < pulldown.length; i++) {
+                  // console.log(pulldown[i].month + "-" + pulldown[i].day)
+                  if (id == pulldown[i].month + "-" + pulldown[i].day) {
+                      holidayTitle.innerHTML = pulldown[i].name;
+                      holidayDescription.innerHTML = pulldown[i].description
+                      holidayImage.src = pulldown[i].image_url
+                      localStorage.setItem('currentday', pulldown[i].id)
+                      $('.datepicker').hide();
+                  }
+              }
+            }
         </script>
     </body>
   </main>
 
   <footer class="footer">
       <% include /partials/footer %>
+
   </footer>
 
 </body>
