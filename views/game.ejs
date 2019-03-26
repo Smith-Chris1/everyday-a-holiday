@@ -55,7 +55,7 @@
             day = gamewords.find(x => x.id === theday).day
 
             $('#dp3').val(month + "-" + day);
-            pulldata();
+            getgame();
 
 
             $('#dp3').datepicker({
@@ -65,9 +65,9 @@
                 autoclose: true
             });
 
-            $('#dp3').datepicker().on('changeDate', function(e) {pulldata()});
+            $('#dp3').datepicker().on('changeDate', function(e) {getgame(); reload();});
 
-            function pulldata() {
+            function getgame() {
               id = $("#dp3").val()
               // console.log(id)
               for (var i = 0; i < gamewords.length; i++) {
