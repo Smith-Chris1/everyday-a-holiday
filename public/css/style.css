@@ -114,3 +114,9 @@ footer p {
   top: -6px;
   left: 191px;
   }
+
+  img {
+min-height: 250px;
+max-height: 560px;
+display: block;
+  }
